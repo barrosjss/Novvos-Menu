@@ -24,13 +24,21 @@ export default function MenuBook() {
         '/menu/page8.webp'
     ]);
 
+    // Track if user has interacted to hide hint
+    const [showHint, setShowHint] = useState(true);
+
+    // Hide hint after user interacts
+    const handleInteraction = () => {
+        setShowHint(false);
+    };
+
     // Responsive dimensions
     // Mobile-first: maximize height, keep width reasonable
     const width = window.innerWidth > 600 ? 450 : window.innerWidth;
     const height = window.innerHeight > 800 ? 700 : window.innerHeight;
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', position: 'relative' }} onClick={handleInteraction}>
             <HTMLFlipBook
                 width={width}
                 height={height}
@@ -56,6 +64,14 @@ export default function MenuBook() {
                     </Page>
                 ))}
             </HTMLFlipBook>
+
+            {/* Animated hint overlay */}
+            {showHint && (
+                <div className="hint-overlay">
+                    <div className="hand-icon">👆</div>
+                    <div className="hint-text">Click here</div>
+                </div>
+            )}
         </div>
     );
 }

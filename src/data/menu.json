@@ -273,14 +273,14 @@
         },
         {
           "id": "te-fuze-durazno-400ml",
-          "name": "Té Negro Fuze Durazno 400 ml",
+          "name": "Té Durazno 400 ml",
           "description": "",
           "price": 5000,
           "image": "/images/products/te_fuze.png"
         },
         {
           "id": "te-verde-mango-400ml",
-          "name": "Té Verde Mango Manzanilla 400 ml",
+          "name": "Té Mango Manzanilla 400 ml",
           "description": "",
           "price": 5000,
           "image": "/images/products/te_verde.png"
@@ -308,7 +308,7 @@
         },
         {
           "id": "agua-brisa-600ml",
-          "name": "Agua Brisa Sin Gas 600 ml",
+          "name": "Agua Brisa 600 ml",
           "description": "",
           "price": 4000,
           "image": "/images/products/agua_brisa.png"

@@ -1,10 +1,11 @@
 import React from 'react';
-import MenuBook from './components/MenuBook';
+import MenuContainer from './components/MenuContainer';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <MenuBook />
+      <MenuContainer />
     </div>
   );
 }

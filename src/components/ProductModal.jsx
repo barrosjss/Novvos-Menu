@@ -142,7 +142,7 @@ const ProductModal = ({ product, promo, onClose }) => {
 
         {/* Product Info */}
         <div className="modal-info">
-          <h2 className="modal-title">{name}</h2>
+          <h2 className="modal-title" translate="no">{name}</h2>
           <p className="modal-description">{description}</p>
 
           <div className="modal-price-container">

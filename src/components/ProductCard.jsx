@@ -59,7 +59,7 @@ const ProductCard = ({ product, promo, onClick }) => {
       </div>
       
       <div className="product-details">
-        <h3 className="product-title">{name}</h3>
+        <h3 className="product-title" translate="no">{name}</h3>
         <p className="product-description">{description}</p>
         
         <div className="product-footer">

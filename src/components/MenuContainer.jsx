@@ -200,7 +200,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
           if (category.displayMode === 'list') {
             return (
               <section key={category.id} id={category.id} className="scroll-category-section list-section">
-                <h2 className="scroll-category-title">{category.title}</h2>
+                <h2 className="scroll-category-title" translate="no">{category.title}</h2>
 
                 <div className="list-section-content">
                   <div className="list-section-image">
@@ -216,7 +216,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
                   <div className="list-section-items">
                     {category.items.map((item) => (
                       <div key={item.id} className="list-item">
-                        <span className="list-item-name">{item.name}</span>
+                        <span className="list-item-name" translate="no">{item.name}</span>
                         <span className="list-item-dots"></span>
                         <span className="list-item-price">${item.price.toLocaleString('es-CO')}</span>
                       </div>
@@ -230,7 +230,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
           // Default grid display mode
           return (
             <section key={category.id} id={category.id} className="scroll-category-section">
-              <h2 className="scroll-category-title">{category.title}</h2>
+              <h2 className="scroll-category-title" translate="no">{category.title}</h2>
                {category.description && <p className="scroll-category-desc">{category.description}</p>}
 
               <div className="scroll-products-grid">
@@ -266,7 +266,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
           </button>
 
           <div className="section-indicator">
-            <span className="section-title">{categories[currentSectionIndex].title}</span>
+            <span className="section-title" translate="no">{categories[currentSectionIndex].title}</span>
           </div>
 
           <button

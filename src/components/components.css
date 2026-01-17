@@ -176,7 +176,7 @@ body {
 
 .date-promo-prices .promo-price {
   font-size: 1rem;
-  color: var(--primary-color);
+  color: #4CAF50; /* Green color for promotional prices */
   font-weight: 800;
 }
 
@@ -527,7 +527,7 @@ body {
 
 .modal-date-promo-prices .modal-price-promo {
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: #4CAF50; /* Green color for promotional prices in modal */
   font-weight: 800;
 }
 

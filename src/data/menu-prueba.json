@@ -178,7 +178,8 @@
           "price": 59900,
           "image": "/images/products/k-cuadrate/k-cuadrate.png",
           "images": [
-            "/images/products/k-cuadrate/k-cuadrate.png"
+            "/images/products/k-cuadrate/k-cuadrate.png",
+            "/images/products/k-cuadrate/k-cuadrate-0.jpg"
           ]
         }
       ]
@@ -196,7 +197,8 @@
           "image": "/images/products/cocteles/margarita/margarita-0.jpg",
           "images": [
             "/images/products/cocteles/margarita/margarita-0.jpg",
-            "/images/products/cocteles/margarita/margarita-1.jpg"
+            "/images/products/cocteles/margarita/margarita-1.jpg",
+            "/images/products/cocteles/margarita/margarita-2.jpg"
           ]
         },
         {
@@ -254,37 +256,32 @@
       ]
     },
     {
-      "id": "limonadas",
-      "title": "Limonadas",
-      "description": "Refrescantes limonadas artesanales preparadas al momento",
+      "id": "barra-artesanal",
+      "title": "Barra Artesanal",
+      "description": "Bebidas artesanales refrescantes para acompañar tu comida. Incluye limonadas (Cerezada, Coco, Natural) y sodas (Maracuyá, Frutos Rojos, Lulo, Yerbabuena)",
       "items": [
         {
-          "id": "limonada-cerezada",
-          "name": "Limonada Cerezada",
-          "description": "Limonada natural con un toque dulce de cereza",
-          "price": 9900,
-          "image": "/images/products/limonadas/limonada-cerezada-0.jpg",
+          "id": "sodas",
+          "name": "Sodas Artesanales",
+          "description": "Refrescantes sodas artesanales en sabores: Maracuyá, Frutos Rojos, Lulo y Yerbabuena",
+          "price": 14900,
+          "image": "/images/products/sodas/soda-0.jpg",
           "images": [
-            "/images/products/limonadas/limonada-cerezada-0.jpg"
+            "/images/products/sodas/soda-0.jpg",
+            "/images/products/sodas/soda-1.jpg",
+            "/images/products/sodas/soda-2.jpg"
           ]
         },
         {
-          "id": "limonada-coco",
-          "name": "Limonada de Coco",
-          "description": "Limonada cremosa con leche de coco",
-          "price": 9900,
-          "image": "/images/products/limonadas/limonada-coco-0.jpg",
+          "id": "limonadas",
+          "name": "Limonadas Artesanales",
+          "description": "Refrescantes limonadas naturales en sabores: Cerezada, Coco y Natural",
+          "price": 10000,
+          "image": "/images/products/limonadas/limonada.jpg",
           "images": [
-            "/images/products/limonadas/limonada-coco-0.jpg"
-          ]
-        },
-        {
-          "id": "limonada-natural",
-          "name": "Limonada Natural",
-          "description": "Limonada clásica recién exprimida",
-          "price": 9900,
-          "image": "/images/products/limonadas/limonada-natural-0.jpg",
-          "images": [
+            "/images/products/limonadas/limonada.jpg",
+            "/images/products/limonadas/limonada-cerezada-0.jpg",
+            "/images/products/limonadas/limonada-coco-0.jpg",
             "/images/products/limonadas/limonada-natural-0.jpg"
           ]
         }

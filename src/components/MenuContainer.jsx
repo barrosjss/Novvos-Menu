@@ -166,10 +166,10 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
   };
 
   return (
-    <div className={`main-scroll-container ${isTestMode ? 'with-promo-banner' : ''}`}>
+    <div className={`main-scroll-container with-promo-banner`}>
       {/* Test Mode Badge */}
       {isTestMode && (
-        <div className="test-mode-badge">
+        <div className="test-mode-badge" onClick={() => window.location.href = '/'}>
           VISTA DE PRUEBAS
           {simulatedDay && (
             <span className="simulated-day-label">
@@ -193,14 +193,12 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
           </div>
         )}
 
-        {/* January Promo Banner - Test Mode */}
-        {isTestMode && (
-          <div className="january-promo-banner">
-            <span className="promo-icon">🎉</span>
-            <span className="promo-text">¡ENERO DE DESCUENTOS! Disfruta precios especiales todo el mes</span>
-            <span className="promo-icon">🍕</span>
-          </div>
-        )}
+        {/* January Promo Banner */}
+        <div className="january-promo-banner">
+          <span className="promo-icon">🎉</span>
+          <span className="promo-text">¡ENERO DE DESCUENTOS! Disfruta precios especiales todo el mes</span>
+          <span className="promo-icon">🍕</span>
+        </div>
       </header>
 
       {/* Content Section */}

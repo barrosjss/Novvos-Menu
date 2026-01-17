@@ -100,6 +100,8 @@ const ProductModal = ({ product, promo, onClose }) => {
             src={imageList[currentImageIndex]}
             alt={`${name} - ${currentImageIndex + 1}`}
             className="modal-image"
+            loading="eager"
+            decoding="async"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "https://placehold.co/600x400/1a1a1a/FFF?text=Novvos";
@@ -146,25 +148,18 @@ const ProductModal = ({ product, promo, onClose }) => {
           <p className="modal-description">{description}</p>
 
           <div className="modal-price-container">
-            {hasDiscount && hasDatePromotion ? (
+            {hasDiscount ? (
               <div className="modal-date-promo-prices">
                 <span className="modal-price modal-price-promo">${finalPrice.toLocaleString('es-CO')}</span>
                 <span className="modal-price-original">${price.toLocaleString('es-CO')}</span>
-              </div>
-            ) : (
-              <>
-                {hasDiscount && (
-                  <span className="modal-price-original">
-                    ${price.toLocaleString('es-CO')}
-                  </span>
-                )}
-                <span className="modal-price">
-                  ${finalPrice.toLocaleString('es-CO')}
-                </span>
                 {promoLabel && (
                   <span className="modal-promo-label">{promoLabel}</span>
                 )}
-              </>
+              </div>
+            ) : (
+              <span className="modal-price">
+                ${finalPrice.toLocaleString('es-CO')}
+              </span>
             )}
           </div>
         </div>

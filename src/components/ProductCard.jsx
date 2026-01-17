@@ -53,6 +53,8 @@ const ProductCard = ({ product, promo, onClick }) => {
           src={image}
           alt={name}
           className="product-image"
+          loading="lazy"
+          decoding="async"
           onError={(e) => {e.target.onerror = null; e.target.src="https://placehold.co/400x300/1a1a1a/FFF?text=Novvos"}}
         />
         {displayBadge && <div style={{position: 'absolute', top: 10, right: 10}} className={`promo-badge ${badge && !promoLabel ? 'new-badge' : ''}`}>{displayBadge}</div>}
@@ -64,20 +66,15 @@ const ProductCard = ({ product, promo, onClick }) => {
         
         <div className="product-footer">
           <div className="price-container">
-            {hasDiscount && hasDatePromotion ? (
+            {hasDiscount ? (
               <div className="date-promo-prices">
                 <span className="product-price promo-price">${finalPrice.toLocaleString('es-CO')}</span>
                 <span className="price-original">${price.toLocaleString('es-CO')}</span>
               </div>
             ) : (
-              <>
-                {hasDiscount && (
-                  <span className="price-original">${price.toLocaleString('es-CO')}</span>
-                )}
-                <span className="product-price">
-                  ${finalPrice.toLocaleString('es-CO')}
-                </span>
-              </>
+              <span className="product-price">
+                ${finalPrice.toLocaleString('es-CO')}
+              </span>
             )}
           </div>
         </div>

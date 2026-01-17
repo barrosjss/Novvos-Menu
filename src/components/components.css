@@ -176,7 +176,7 @@ body {
 
 .date-promo-prices .promo-price {
   font-size: 1rem;
-  color: #4CAF50;
+  color: var(--primary-color);
   font-weight: 800;
 }
 
@@ -527,7 +527,7 @@ body {
 
 .modal-date-promo-prices .modal-price-promo {
   font-size: 1.5rem;
-  color: #4CAF50;
+  color: var(--primary-color);
   font-weight: 800;
 }
 
@@ -673,4 +673,10 @@ body {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+/* Simulated Day Label */
+.simulated-day-label {
+  font-weight: 400;
+  font-size: 0.65rem;
 }

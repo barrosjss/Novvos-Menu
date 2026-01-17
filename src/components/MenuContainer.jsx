@@ -36,7 +36,7 @@ const sortItemsByPriority = (items) => {
   });
 };
 
-const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
+const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulatedDay = null }) => {
   const [currentDay, setCurrentDay] = useState('');
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -45,10 +45,15 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
   const categories = menuData.categories;
 
   useEffect(() => {
-    const date = new Date();
-    const day = date.getDay();
-    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-    setCurrentDay(days[day]);
+    // Use simulated day if provided, otherwise use actual day
+    if (simulatedDay) {
+      setCurrentDay(simulatedDay);
+    } else {
+      const date = new Date();
+      const day = date.getDay();
+      const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      setCurrentDay(days[day]);
+    }
 
     // Improved scroll handler to update active section
     const handleScroll = () => {
@@ -94,7 +99,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
       window.removeEventListener('scroll', scrollListener);
       clearTimeout(scrollTimeout);
     };
-  }, [categories]);
+  }, [categories, simulatedDay]);
 
   const getPromoForCategory = (categoryId) => {
     // Tuesday: K-Box and K-Rolls at 25.000
@@ -166,6 +171,13 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
       {isTestMode && (
         <div className="test-mode-badge">
           VISTA DE PRUEBAS
+          {simulatedDay && (
+            <span className="simulated-day-label">
+              {' '}({simulatedDay === 'tuesday' ? 'Martes' :
+                    simulatedDay === 'thursday' ? 'Jueves' :
+                    simulatedDay.charAt(0).toUpperCase() + simulatedDay.slice(1)})
+            </span>
+          )}
         </div>
       )}
 
@@ -207,6 +219,8 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
                     <img
                       src={category.sectionImage}
                       alt={category.title}
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = "https://placehold.co/300x400/1a1a1a/FFF?text=" + category.title;

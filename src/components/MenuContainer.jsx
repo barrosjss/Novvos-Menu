@@ -1,11 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import menuData from '../data/menu.json';
+import defaultMenuData from '../data/menu.json';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import './components.css';
 
-const MenuContainer = () => {
+// Helper function to check if a date-based promotion is active
+const isPromotionActive = (promotion) => {
+  if (!promotion) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const startDate = new Date(promotion.startDate);
+  const endDate = new Date(promotion.endDate);
+  endDate.setHours(23, 59, 59, 999);
+
+  return today >= startDate && today <= endDate;
+};
+
+// Sort items: products with active promotions or "Nuevo" badge first
+const sortItemsByPriority = (items) => {
+  return [...items].sort((a, b) => {
+    const aHasPromo = isPromotionActive(a.promotion);
+    const bHasPromo = isPromotionActive(b.promotion);
+    const aIsNew = a.badge === 'Nuevo';
+    const bIsNew = b.badge === 'Nuevo';
+
+    // Priority: active promo > nuevo badge > rest
+    const aPriority = aHasPromo ? 2 : (aIsNew ? 1 : 0);
+    const bPriority = bHasPromo ? 2 : (bIsNew ? 1 : 0);
+
+    if (aPriority !== bPriority) return bPriority - aPriority;
+    return 0; // Keep original order for items with same priority
+  });
+};
+
+const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false }) => {
   const [currentDay, setCurrentDay] = useState('');
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -130,16 +161,32 @@ const MenuContainer = () => {
   };
 
   return (
-    <div className="main-scroll-container">
+    <div className={`main-scroll-container ${isTestMode ? 'with-promo-banner' : ''}`}>
+      {/* Test Mode Badge */}
+      {isTestMode && (
+        <div className="test-mode-badge">
+          VISTA DE PRUEBAS
+        </div>
+      )}
+
       {/* Header Section */}
       <header className="menu-header-sticky">
         <div className="brand-bar-centered">
            <img src="/logo.webp" alt="Novvos Logo" className="header-logo" />
         </div>
-        
+
         {dayBanner && (
           <div className="sticky-promo-banner">
             {dayBanner}
+          </div>
+        )}
+
+        {/* January Promo Banner - Test Mode */}
+        {isTestMode && (
+          <div className="january-promo-banner">
+            <span className="promo-icon">🎉</span>
+            <span className="promo-text">¡ENERO DE DESCUENTOS! Disfruta precios especiales todo el mes</span>
+            <span className="promo-icon">🍕</span>
           </div>
         )}
       </header>
@@ -187,7 +234,7 @@ const MenuContainer = () => {
                {category.description && <p className="scroll-category-desc">{category.description}</p>}
 
               <div className="scroll-products-grid">
-                {category.items.map((item) => (
+                {sortItemsByPriority(category.items).map((item) => (
                   <ProductCard
                     key={item.id}
                     product={item}

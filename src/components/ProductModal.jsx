@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import './components.css';
 
+// Helper function to check if a date-based promotion is active
+const isPromotionActive = (promotion) => {
+  if (!promotion) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const startDate = new Date(promotion.startDate);
+  const endDate = new Date(promotion.endDate);
+  endDate.setHours(23, 59, 59, 999);
+
+  return today >= startDate && today <= endDate;
+};
+
 const ProductModal = ({ product, promo, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const { name, description, price, image, images, badge } = product;
+  const { name, description, price, image, images, badge, promotion } = product;
 
   // Use images array if available, otherwise fallback to single image
   const imageList = images && images.length > 0 ? images : [image];
@@ -13,8 +27,17 @@ const ProductModal = ({ product, promo, onClose }) => {
   let finalPrice = price;
   let hasDiscount = false;
   let promoLabel = '';
+  let hasDatePromotion = false;
 
-  if (promo) {
+  // Check for date-based promotion first
+  if (promotion && isPromotionActive(promotion)) {
+    finalPrice = promotion.price;
+    hasDiscount = true;
+    hasDatePromotion = true;
+  }
+
+  // Then check for day-based promos (Tuesday/Thursday)
+  if (promo && !hasDatePromotion) {
     if (promo.type === 'fixed_price') {
       finalPrice = promo.value;
       hasDiscount = price > finalPrice;
@@ -123,16 +146,25 @@ const ProductModal = ({ product, promo, onClose }) => {
           <p className="modal-description">{description}</p>
 
           <div className="modal-price-container">
-            {hasDiscount && (
-              <span className="modal-price-original">
-                ${price.toLocaleString('es-CO')}
-              </span>
-            )}
-            <span className="modal-price">
-              ${finalPrice.toLocaleString('es-CO')}
-            </span>
-            {promoLabel && (
-              <span className="modal-promo-label">{promoLabel}</span>
+            {hasDiscount && hasDatePromotion ? (
+              <div className="modal-date-promo-prices">
+                <span className="modal-price modal-price-promo">${finalPrice.toLocaleString('es-CO')}</span>
+                <span className="modal-price-original">${price.toLocaleString('es-CO')}</span>
+              </div>
+            ) : (
+              <>
+                {hasDiscount && (
+                  <span className="modal-price-original">
+                    ${price.toLocaleString('es-CO')}
+                  </span>
+                )}
+                <span className="modal-price">
+                  ${finalPrice.toLocaleString('es-CO')}
+                </span>
+                {promoLabel && (
+                  <span className="modal-promo-label">{promoLabel}</span>
+                )}
+              </>
             )}
           </div>
         </div>

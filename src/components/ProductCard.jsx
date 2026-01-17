@@ -1,22 +1,43 @@
 import React from 'react';
 import './components.css';
 
+// Helper function to check if a date-based promotion is active
+const isPromotionActive = (promotion) => {
+  if (!promotion) return false;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const startDate = new Date(promotion.startDate);
+  const endDate = new Date(promotion.endDate);
+  endDate.setHours(23, 59, 59, 999);
+
+  return today >= startDate && today <= endDate;
+};
+
 const ProductCard = ({ product, promo, onClick }) => {
-  const { name, description, price, image, badge } = product;
+  const { name, description, price, image, badge, promotion } = product;
 
   // Determine final price and correct display based on promo
   let finalPrice = price;
   let hasDiscount = false;
   let promoLabel = '';
+  let hasDatePromotion = false;
 
-  if (promo) {
+  // Check for date-based promotion first
+  if (promotion && isPromotionActive(promotion)) {
+    finalPrice = promotion.price;
+    hasDiscount = true;
+    hasDatePromotion = true;
+  }
+
+  // Then check for day-based promos (Tuesday/Thursday)
+  if (promo && !hasDatePromotion) {
     if (promo.type === 'fixed_price') {
       finalPrice = promo.value;
       hasDiscount = price > finalPrice;
       promoLabel = '¡PROMO HOY!';
     } else if (promo.type === '2x1') {
-      // 2x1 logic: price stays same but you get 2.
-      // Or show badge. Let's show badge.
       promoLabel = '2x1 HOY';
     }
   }
@@ -43,12 +64,21 @@ const ProductCard = ({ product, promo, onClick }) => {
         
         <div className="product-footer">
           <div className="price-container">
-            {hasDiscount && (
-              <span className="price-original">${price.toLocaleString('es-CO')}</span>
+            {hasDiscount && hasDatePromotion ? (
+              <div className="date-promo-prices">
+                <span className="product-price promo-price">${finalPrice.toLocaleString('es-CO')}</span>
+                <span className="price-original">${price.toLocaleString('es-CO')}</span>
+              </div>
+            ) : (
+              <>
+                {hasDiscount && (
+                  <span className="price-original">${price.toLocaleString('es-CO')}</span>
+                )}
+                <span className="product-price">
+                  ${finalPrice.toLocaleString('es-CO')}
+                </span>
+              </>
             )}
-            <span className="product-price">
-              ${finalPrice.toLocaleString('es-CO')}
-            </span>
           </div>
         </div>
       </div>

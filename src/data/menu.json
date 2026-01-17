@@ -98,7 +98,7 @@
         {
           "id": "ranchera",
           "name": "Ranchera + bebida",
-          "description": "Rollo elaborado en nuestra masa de pizza, bañado de crema de ajo, relleno de queso mozzarella, jamón, chorizo ranchero, maíz y cubierto de queso parmesano.",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno de queso mozzarella, jamón, chorizo ranchero, maíz y cubierto de queso parmesano.",
           "price": 27000,
           "image": "/images/products/k-roll/ranchero/k-roll-ranchero-0.jpg",
           "images": [
@@ -110,7 +110,7 @@
         {
           "id": "alfreda",
           "name": "Alfreda + bebida",
-          "description": "Rollo elaborado en nuestra masa de pizza, bañado de crema de ajo, relleno con salsa blanca, pimienta, queso mozzarella y pollo, cubierto de queso parmesano.",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno con salsa blanca, pimienta, queso mozzarella y pollo, cubierto de queso parmesano.",
           "price": 27000,
           "image": "/images/products/k-roll/alfreda/k-roll-alfreda-0.jpg",
           "images": [
@@ -122,7 +122,7 @@
         {
           "id": "candy",
           "name": "Candy + bebida",
-          "description": "Rollo elaborado en nuestra masa de pizza, bañado de crema de ajo, Queso Mozzarela, Bocadillo y cubierto de queso parmesano.",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, Queso Mozzarela, Bocadillo y cubierto de queso parmesano.",
           "price": 27000,
           "image": "/images/products/k-roll/candy/k-roll-candy-0.jpg",
           "images": [
@@ -130,6 +130,19 @@
             "/images/products/k-roll/candy/k-roll-candy-1.jpg",
             "/images/products/k-roll/candy/k-roll-candy-2.jpg"
           ]
+        },
+        {
+          "id": "k-roll-hawaiana",
+          "name": "Hawaiana + bebida",
+          "description": "Rollo horneado, elaborado en nuestra masa de pizza madurada, bañado de crema de ajo, relleno con queso mozzarella y jamón de pavo a las finas hierbas, cubierto de queso parmesano.",
+          "price": 27000,
+          "image": "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
+          "images": [
+            "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
+            "/images/products/k-roll/hawaiano/k-roll-hawaiano-1.jpg",
+            "/images/products/k-roll/hawaiano/k-roll-hawaiano-2.jpg"
+          ],
+          "badge": "Nuevo"
         }
       ]
     },

@@ -1,0 +1,424 @@
+{
+  "categories": [
+    {
+      "id": "k-box",
+      "title": "K-Box",
+      "description": "Revolucionamos la forma de hacer pizzas. Somos la primera K-Box en Barranquilla: pizza rectangular elaborada con masa madurada e ingredientes de calidad",
+      "items": [
+        {
+          "id": "b-balsamica",
+          "name": "Balsámica + bebida",
+          "description": "Masa Madurada con Salsa de Pesto, Queso Mozzarella, Rúgula, Tomate Cherry y Queso Parmesano",
+          "price": 27000,
+          "image": "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
+          "images": [
+            "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
+            "/images/products/k-box/balsamica/k-box-balsamica-1.jpg",
+            "/images/products/k-box/balsamica/k-box-balsamica-2.jpg"
+          ],
+          "badge": "Nuevo",
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        },
+        {
+          "id": "b-quillera",
+          "name": "Quillera + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Butifarra, Pimentón Verde, Maíz Tierno, Chorizo de Res y Queso Parmesano",
+          "price": 26900,
+          "image": "/images/products/k-box/quillera/k-box-quillera-0.jpg",
+          "images": [
+            "/images/products/k-box/quillera/k-box-quillera-0.jpg",
+            "/images/products/k-box/quillera/k-box-quillera-1.jpg",
+            "/images/products/k-box/quillera/k-box-quillera-2.jpg"
+          ]
+        },
+        {
+          "id": "b-mixta",
+          "name": "Mixta + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Peperoni, Salami y hojas de Albahaca",
+          "price": 27000,
+          "image": "/images/products/k-box/mixta/k-box-mixta-0.jpg",
+          "images": [
+            "/images/products/k-box/mixta/k-box-mixta-0.jpg",
+            "/images/products/k-box/mixta/k-box-mixta-1.jpg",
+            "/images/products/k-box/mixta/k-box-mixta-2.jpg"
+          ],
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        },
+        {
+          "id": "b-hawaiana",
+          "name": "Hawaiana + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Piña caramelizada, Queso Mozzarela y Jamón Finas Hierbas",
+          "price": 27000,
+          "image": "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
+          "images": [
+            "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
+            "/images/products/k-box/hawaiana/k-box-hawaiana-1.jpg",
+            "/images/products/k-box/hawaiana/k-box-hawaiana-2.jpg"
+          ],
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        },
+        {
+          "id": "b-4quesos",
+          "name": "4 Quesos + bebida",
+          "description": "Masa Madurada con Salsa Bechamel, Queso Mozzarella, Queso Holandés, Parmesano, y Queso Búfala",
+          "price": 26900,
+          "image": "/images/products/k-box/4quesos/k-box-4quesos-0.jpg",
+          "images": [
+            "/images/products/k-box/4quesos/k-box-4quesos-0.jpg",
+            "/images/products/k-box/4quesos/k-box-4quesos-1.jpg"
+          ]
+        },
+        {
+          "id": "b-amaranta",
+          "name": "Amaranta + bebida",
+          "description": "Masa Madurada con Salsa Bechamel, Queso Mozzarella, Cubos de Pechuga, Espinaca al óleo, Champiñones y Queso Parmesano",
+          "price": 26900,
+          "image": "/images/products/k-box/amarantta/k-box-amarantta-0.jpg",
+          "images": [
+            "/images/products/k-box/amarantta/k-box-amarantta-0.jpg",
+            "/images/products/k-box/amarantta/k-box-amarantta-1.jpg",
+            "/images/products/k-box/amarantta/k-box-amarantta-2.jpg"
+          ]
+        },
+        {
+          "id": "b-jamon-queso",
+          "name": "Jamón y Queso + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Queso Mozzarela y Jamón Finas Hierbas",
+          "price": 27000,
+          "image": "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
+          "images": [
+            "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
+            "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-1.jpg"
+          ],
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        }
+      ]
+    },
+    {
+      "id": "k-roll",
+      "title": "K-Roll",
+      "description": "Nuestra segunda innovación: rollos horneados con masa madurada donde el contraste de sabores y crocancia ha cautivado a nuestros comensales",
+      "items": [
+        {
+          "id": "ranchera",
+          "name": "Ranchera + bebida",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno de queso mozzarella, jamón, chorizo ranchero, maíz y cubierto de queso parmesano.",
+          "price": 26900,
+          "image": "/images/products/k-roll/ranchero/k-roll-ranchero-0.jpg",
+          "images": [
+            "/images/products/k-roll/ranchero/k-roll-ranchero-0.jpg",
+            "/images/products/k-roll/ranchero/k-roll-ranchero-1.jpg",
+            "/images/products/k-roll/ranchero/k-roll-ranchero-2.jpg"
+          ]
+        },
+        {
+          "id": "alfreda",
+          "name": "Alfreda + bebida",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno con salsa blanca, pimienta, queso mozzarella y pollo, cubierto de queso parmesano.",
+          "price": 26900,
+          "image": "/images/products/k-roll/alfreda/k-roll-alfreda-0.jpg",
+          "images": [
+            "/images/products/k-roll/alfreda/k-roll-alfreda-0.jpg",
+            "/images/products/k-roll/alfreda/k-roll-alfreda-1.jpg",
+            "/images/products/k-roll/alfreda/k-roll-alfreda-2.jpg"
+          ]
+        },
+        {
+          "id": "candy",
+          "name": "Candy + bebida",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, Queso Mozzarela, Bocadillo y cubierto de queso parmesano.",
+          "price": 26900,
+          "image": "/images/products/k-roll/candy/k-roll-candy-0.jpg",
+          "images": [
+            "/images/products/k-roll/candy/k-roll-candy-0.jpg",
+            "/images/products/k-roll/candy/k-roll-candy-1.jpg",
+            "/images/products/k-roll/candy/k-roll-candy-2.jpg"
+          ]
+        },
+        {
+          "id": "k-roll-hawaiana",
+          "name": "Hawaiana + bebida",
+          "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno con queso mozzarella y jamón de pavo a las finas hierbas, cubierto de queso parmesano.",
+          "price": 26900,
+          "image": "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
+          "images": [
+            "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
+            "/images/products/k-roll/hawaiano/k-roll-hawaiano-1.jpg",
+            "/images/products/k-roll/hawaiano/k-roll-hawaiano-2.jpg"
+          ],
+          "badge": "Nuevo"
+        }
+      ]
+    },
+    {
+      "id": "k-cuadrate",
+      "title": "K-Cuadrate",
+      "description": "Pizza mediana, cuadrada y personalizada.Puedes elegir hasta 3 sabores entre nuestras opciones:Hawaiana, 4Quesos, Amaranta, Jamón & Queso y Mixta.",
+      "items": [
+        {
+          "id": "k-cuadrate-general",
+          "name": "K-Cuadrate",
+          "description": "Formato mediano (3-4 Personas)Arma tu combinación y disfruta.",
+          "price": 59900,
+          "image": "/images/products/k-cuadrate/k-cuadrate.png",
+          "images": [
+            "/images/products/k-cuadrate/k-cuadrate.png"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cocktails",
+      "title": "Cocteles",
+      "description": "Mixología artesanal con técnicas innovadoras y sabores únicos de la casa",
+      "items": [
+        {
+          "id": "margarita",
+          "name": "Margaritas",
+          "description": "Tradicional, Blue, Maracuya, Frutos Rojos",
+          "price": 24900,
+          "image": "/images/products/cocteles/margarita/margarita-0.jpg",
+          "images": [
+            "/images/products/cocteles/margarita/margarita-0.jpg",
+            "/images/products/cocteles/margarita/margarita-1.jpg"
+          ]
+        },
+        {
+          "id": "mojito",
+          "name": "Mojito",
+          "description": "Clásico refrescante",
+          "price": 24900,
+          "image": "/images/products/cocteles/mojito/mojito-0.jpg",
+          "images": [
+            "/images/products/cocteles/mojito/mojito-0.jpg"
+          ]
+        },
+        {
+          "id": "cuba-libre",
+          "name": "Cuba Libre",
+          "description": "",
+          "price": 24900,
+          "image": "/images/products/cocteles/cuba-libre/cuba-libre-0.jpg",
+          "images": [
+            "/images/products/cocteles/cuba-libre/cuba-libre-0.jpg"
+          ]
+        },
+        {
+          "id": "gin-tonic",
+          "name": "Gin Tonic",
+          "description": "",
+          "price": 24900,
+          "image": "/images/products/cocteles/gin-tonic/gin-tonic-0.jpg",
+          "images": [
+            "/images/products/cocteles/gin-tonic/gin-tonic-0.jpg"
+          ]
+        },
+        {
+          "id": "caipiroska",
+          "name": "Caipiroska",
+          "description": "Limones refrescantes macerados en azúcar, como base vodka y hielo para refrescar",
+          "price": 24900,
+          "image": "/images/products/cocteles/caipiroska/caipiroska-0.jpg",
+          "images": [
+            "/images/products/cocteles/caipiroska/caipiroska-0.jpg"
+          ],
+          "badge": "Nuevo"
+        },
+        {
+          "id": "mojito-blue",
+          "name": "Mojito Blue",
+          "description": "Versión tropical del clásico mojito con un toque de blue curaçao",
+          "price": 24900,
+          "image": "/images/products/cocteles/mojito-blue/mojito-blue-0.jpg",
+          "images": [
+            "/images/products/cocteles/mojito-blue/mojito-blue-0.jpg"
+          ],
+          "badge": "Nuevo"
+        }
+      ]
+    },
+    {
+      "id": "limonadas",
+      "title": "Limonadas",
+      "description": "Refrescantes limonadas artesanales preparadas al momento",
+      "items": [
+        {
+          "id": "limonada-cerezada",
+          "name": "Limonada Cerezada",
+          "description": "Limonada natural con un toque dulce de cereza",
+          "price": 10000,
+          "image": "/images/products/limonadas/limonada-cerezada-0.jpg",
+          "images": [
+            "/images/products/limonadas/limonada-cerezada-0.jpg"
+          ]
+        },
+        {
+          "id": "limonada-coco",
+          "name": "Limonada de Coco",
+          "description": "Limonada cremosa con leche de coco",
+          "price": 10000,
+          "image": "/images/products/limonadas/limonada-coco-0.jpg",
+          "images": [
+            "/images/products/limonadas/limonada-coco-0.jpg"
+          ]
+        },
+        {
+          "id": "limonada-natural",
+          "name": "Limonada Natural",
+          "description": "Limonada clásica recién exprimida",
+          "price": 10000,
+          "image": "/images/products/limonadas/limonada-natural-0.jpg",
+          "images": [
+            "/images/products/limonadas/limonada-natural-0.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bebidas",
+      "title": "Bebidas",
+      "description": "Selección refrescante para complementar tu experiencia Novvos",
+      "displayMode": "list",
+      "sectionImage": "/images/products/bebidas.png",
+      "items": [
+        {
+          "id": "scheweppes-ginger-1.5l",
+          "name": "Schweppes Ginger 1.5 L",
+          "description": "",
+          "price": 11900,
+          "image": "/images/products/schweppes_ginger.png"
+        },
+        {
+          "id": "te-fuze-durazno-400ml",
+          "name": "Té Durazno 400 ml",
+          "description": "",
+          "price": 4900,
+          "image": "/images/products/te_fuze.png"
+        },
+        {
+          "id": "te-verde-mango-400ml",
+          "name": "Té Mango Manzanilla 400 ml",
+          "description": "",
+          "price": 4900,
+          "image": "/images/products/te_verde.png"
+        },
+        {
+          "id": "ginger-400ml",
+          "name": "Ginger 400 ml",
+          "description": "",
+          "price": 4900,
+          "image": "/images/products/ginger_400.png"
+        },
+        {
+          "id": "coca-cola-1.5l",
+          "name": "Coca Cola Original 1.5 L",
+          "description": "",
+          "price": 9900,
+          "image": "/images/products/coca_cola_15.png"
+        },
+        {
+          "id": "coca-cola-zero-250ml",
+          "name": "Coca Cola Zero 250 ml",
+          "description": "",
+          "price": 2000,
+          "image": "/images/products/coca_cola_zero.png"
+        },
+        {
+          "id": "agua-brisa-600ml",
+          "name": "Agua Brisa 600 ml",
+          "description": "",
+          "price": 4000,
+          "image": "/images/products/agua_brisa.png"
+        },
+        {
+          "id": "coca-cola-400ml",
+          "name": "Coca Cola 400 ml",
+          "description": "",
+          "price": 5000,
+          "image": "/images/products/coca_cola_400.png"
+        },
+        {
+          "id": "quatro-toronja-250ml",
+          "name": "Quatro Toronja 250 ml",
+          "description": "",
+          "price": 3900,
+          "image": "/images/products/quatro_toronja.png"
+        },
+        {
+          "id": "quatro-choice-2.5l",
+          "name": "Quatro Choice 2.5L",
+          "description": "",
+          "price": 12900,
+          "image": "/images/products/quatro_choice.png"
+        },
+        {
+          "id": "agua-manzana-280ml",
+          "name": "Agua Saborizada Manzana 280 ml",
+          "description": "",
+          "price": 2500,
+          "image": "/images/products/agua_manzana.png"
+        },
+        {
+          "id": "sodas",
+          "name": "Sodas Saborizadas",
+          "description": "Maracuya, Frutos Rojos, Lulo, Yerbabuena",
+          "price": 14900,
+          "image": "/images/products/soda.png"
+        }
+      ]
+    },
+    {
+      "id": "cervezas",
+      "title": "Cervezas",
+      "description": "Las mejores cervezas nacionales e importadas para acompañar tu pizza",
+      "displayMode": "list",
+      "sectionImage": "/images/products/cervezas.png",
+      "items": [
+        {
+          "id": "stella-artois",
+          "name": "Stella Artois",
+          "description": "",
+          "price": 7900,
+          "image": "/images/products/stella_artois.png"
+        },
+        {
+          "id": "corona",
+          "name": "Corona",
+          "description": "",
+          "price": 7900,
+          "image": "/images/products/corona.png"
+        },
+        {
+          "id": "budweiser",
+          "name": "Budweiser",
+          "description": "",
+          "price": 4900,
+          "image": "/images/products/budweiser.png"
+        },
+        {
+          "id": "aguila",
+          "name": "Aguila",
+          "description": "",
+          "price": 4900,
+          "image": "/images/products/aguila.png"
+        }
+      ]
+    }
+  ]
+}

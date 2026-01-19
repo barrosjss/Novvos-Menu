@@ -36,7 +36,7 @@ const sortItemsByPriority = (items) => {
   });
 };
 
-const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulatedDay = null }) => {
+const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulatedDay = null, isBarOnly = false }) => {
   const [currentDay, setCurrentDay] = useState('');
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -211,6 +211,24 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
 
       {/* Content Section */}
       <div className="menu-content-scroll">
+        {isBarOnly && (
+          <div className="bartender-section">
+            <div className="bartender-card">
+              <div className="bartender-image-container">
+                <img 
+                  src="public/images/team/bartender.jpg" 
+                  alt="Bartender" 
+                  className="bartender-thumb"
+                />
+              </div>
+              <div className="bartender-info">
+                <p className="bartender-msg">
+                  "¡Bienvenidos a mi barra! Cada bebida que ven aquí está pensada para ser disfrutada, compartida y recordada. Este espacio fue creado con dedicación, estilo y mucho amor. Espero que cada trago les hable por sí solo."
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
         {categories.map((category) => {
           const promo = getPromoForCategory(category.id);
 

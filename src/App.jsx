@@ -21,6 +21,7 @@ function App() {
   const [isTestMode, setIsTestMode] = useState(false);
   const [currentMenuData, setCurrentMenuData] = useState(menuData);
   const [simulatedDay, setSimulatedDay] = useState(null);
+  const [isBarOnly, setIsBarOnly] = useState(false);
 
   useEffect(() => {
     // Check if we're on the /prueba route
@@ -39,8 +40,19 @@ function App() {
         } else {
           setSimulatedDay(null);
         }
+      } else if (path === '/barra' || path === '/barra/') {
+        setIsTestMode(false);
+        setSimulatedDay(null);
+        setIsBarOnly(true);
+        // Filter for bar items: cocktails, barra-artesanal, bebidas, cervezas
+        const barCategories = ['cocktails', 'barra-artesanal', 'bebidas', 'cervezas'];
+        setCurrentMenuData({
+          ...menuData,
+          categories: menuData.categories.filter(cat => barCategories.includes(cat.id))
+        });
       } else {
         setIsTestMode(false);
+        setIsBarOnly(false);
         setCurrentMenuData(menuData);
         setSimulatedDay(null);
       }
@@ -59,6 +71,7 @@ function App() {
         menuData={currentMenuData}
         isTestMode={isTestMode}
         simulatedDay={simulatedDay}
+        isBarOnly={isBarOnly}
       />
     </div>
   );

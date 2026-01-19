@@ -216,7 +216,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
             <div className="bartender-card">
               <div className="bartender-image-container">
                 <img 
-                  src="public/images/team/bartender.jpg" 
+                  src="/images/team/bartender.jpg" 
                   alt="Bartender" 
                   className="bartender-thumb"
                 />

@@ -43,7 +43,12 @@ const ProductCard = ({ product, promo, onClick }) => {
   }
 
   // Use product badge if no promo label
-  const displayBadge = promoLabel || badge;
+  let displayBadge = promoLabel || badge;
+  
+  // Special label for free items
+  if (finalPrice === 0) {
+    displayBadge = '¡RECLAMA TU SODA GRATIS!';
+  }
 
   return (
     <div className="product-card" onClick={onClick}>
@@ -68,15 +73,22 @@ const ProductCard = ({ product, promo, onClick }) => {
           <div className="price-container">
             {hasDiscount ? (
               <div className="date-promo-prices">
-                <span className="product-price promo-price">${finalPrice.toLocaleString('es-CO')}</span>
+                <span className="product-price promo-price">
+                  {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
+                </span>
                 <span className="price-original">${price.toLocaleString('es-CO')}</span>
               </div>
             ) : (
               <span className="product-price">
-                ${finalPrice.toLocaleString('es-CO')}
+                {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
               </span>
             )}
           </div>
+          {finalPrice === 0 && (
+            <div className="free-item-tc">
+              *Válido 1 por mujer con consumo mínimo
+            </div>
+          )}
         </div>
       </div>
     </div>

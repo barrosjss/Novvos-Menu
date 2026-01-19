@@ -344,6 +344,13 @@
           "image": "/images/products/agua_brisa.png"
         },
         {
+          "id": "agua-brisa-280ml",
+          "name": "Agua Brisa 280 ml",
+          "description": "",
+          "price": 2000,
+          "image": "/images/products/agua_brisa.png"
+        },
+        {
           "id": "coca-cola-400ml",
           "name": "Coca Cola 400 ml",
           "description": "",
@@ -366,17 +373,17 @@
         },
         {
           "id": "agua-manzana-280ml",
-          "name": "Agua Saborizada Manzana 280 ml",
+          "name": "Agua Manzana 280 ml",
           "description": "",
           "price": 2500,
           "image": "/images/products/agua_manzana.png"
         },
         {
-          "id": "sodas",
-          "name": "Sodas Saborizadas",
-          "description": "Maracuya, Frutos Rojos, Lulo, Yerbabuena",
-          "price": 14900,
-          "image": "/images/products/soda.png"
+          "id": "sprite-400ml",
+          "name": "Sprite 400 ml",
+          "description": "",
+          "price": 4000,
+          "image": "/images/products/sprite.png"
         }
       ]
     },

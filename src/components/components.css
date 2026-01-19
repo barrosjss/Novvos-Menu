@@ -669,8 +669,13 @@ body {
 }
 
 @keyframes pulse-test {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 /* January Promo Banner */
@@ -701,4 +706,53 @@ body {
 .simulated-day-label {
   font-weight: 400;
   font-size: 0.65rem;
+}
+
+/* Free Promotion Badge */
+.free-badge {
+  background-color: #ff4d4d !important;
+  color: white !important;
+  animation: pulse-free 2s infinite;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+@keyframes pulse-free {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.free-item-tc {
+  font-size: 0.65rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.modal-free-tc {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 8px;
+  text-align: left;
+}
+
+/* Free Promotion Badge */
+.free-badge {
+  background-color: #ff4d4d !important;
+  color: white !important;
+  animation: pulse-free 2s infinite;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+@keyframes pulse-free {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

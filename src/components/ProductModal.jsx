@@ -135,9 +135,9 @@ const ProductModal = ({ product, promo, onClose }) => {
           )}
 
           {/* Badge */}
-          {(promoLabel || badge) && (
-            <div className={`modal-badge ${badge && !promoLabel ? 'new-badge' : ''}`}>
-              {promoLabel || badge}
+          {(promoLabel || badge || finalPrice === 0) && (
+            <div className={`modal-badge ${badge && !promoLabel && finalPrice !== 0 ? 'new-badge' : ''} ${finalPrice === 0 ? 'free-badge' : ''}`}>
+              {finalPrice === 0 ? '¡RECLAMA TU SODA GRATIS!' : (promoLabel || badge)}
             </div>
           )}
         </div>
@@ -150,7 +150,9 @@ const ProductModal = ({ product, promo, onClose }) => {
           <div className="modal-price-container">
             {hasDiscount ? (
               <div className="modal-date-promo-prices">
-                <span className="modal-price modal-price-promo">${finalPrice.toLocaleString('es-CO')}</span>
+                <span className="modal-price modal-price-promo">
+                  {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
+                </span>
                 <span className="modal-price-original">${price.toLocaleString('es-CO')}</span>
                 {promoLabel && (
                   <span className="modal-promo-label">{promoLabel}</span>
@@ -158,10 +160,15 @@ const ProductModal = ({ product, promo, onClose }) => {
               </div>
             ) : (
               <span className="modal-price">
-                ${finalPrice.toLocaleString('es-CO')}
+                {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
               </span>
             )}
           </div>
+          {finalPrice === 0 && (
+            <p className="modal-free-tc">
+              *Válido 1 por mujer con consumo mínimo
+            </p>
+          )}
         </div>
       </div>
     </div>

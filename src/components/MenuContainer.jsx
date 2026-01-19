@@ -116,11 +116,19 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
       }
     }
 
+    // Friday: Free Sodas for Women
+    if (currentDay === 'friday') {
+      if (categoryId === 'bebidas' || categoryId === 'barra-artesanal') {
+        return { type: 'fixed_price', value: 0 };
+      }
+    }
+
     return null;
   };
 
   const dayBanner = currentDay === 'tuesday' ? "¡HOY MARTES: K-BOX Y K-ROLLS A $25.000!" : 
-                    currentDay === 'thursday' ? "¡HOY JUEVES: 2x1 EN COCTELES!" : "";
+                    currentDay === 'thursday' ? "¡HOY JUEVES: 2x1 EN COCTELES!" : 
+                    currentDay === 'friday' ? "¡HOY VIERNES: SODAS GRATIS PARA LAS MUJERES!" : "";
 
   const scrollToSection = (index) => {
     if (index < 0 || index >= categories.length) return;
@@ -244,16 +252,19 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
             <section key={category.id} id={category.id} className="scroll-category-section">
               <h2 className="scroll-category-title" translate="no">{category.title}</h2>
                {category.description && <p className="scroll-category-desc">{category.description}</p>}
-
+ 
               <div className="scroll-products-grid">
-                {sortItemsByPriority(category.items).map((item) => (
-                  <ProductCard
-                    key={item.id}
-                    product={item}
-                    promo={promo}
-                    onClick={() => handleProductClick(item, promo)}
-                  />
-                ))}
+                {sortItemsByPriority(category.items).map((item) => {
+                  const itemPromo = currentDay === 'friday' ? (item.id === 'sodas' ? promo : null) : promo;
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      product={item}
+                      promo={itemPromo}
+                      onClick={() => handleProductClick(item, itemPromo)}
+                    />
+                  );
+                })}
               </div>
             </section>
           );

@@ -200,13 +200,6 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
             {dayBanner}
           </div>
         )}
-
-        {/* January Promo Banner */}
-        <div className="january-promo-banner">
-          <span className="promo-icon">🎉</span>
-          <span className="promo-text">¡ENERO DE DESCUENTOS! Disfruta precios especiales todo el mes</span>
-          <span className="promo-icon">🍕</span>
-        </div>
       </header>
 
       {/* Content Section */}

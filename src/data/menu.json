@@ -9,7 +9,7 @@
           "id": "b-balsamica",
           "name": "Balsámica + bebida",
           "description": "Masa Madurada con Salsa de Pesto, Queso Mozzarella, Rúgula, Tomate Cherry y Queso Parmesano",
-          "price": 27000,
+          "price": 26900,
           "image": "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
           "images": [
             "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
@@ -17,6 +17,56 @@
             "/images/products/k-box/balsamica/k-box-balsamica-2.jpg"
           ],
           "badge": "Nuevo",
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        },
+        {
+          "id": "b-jamon-queso",
+          "name": "Jamón y Queso + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Queso Mozzarela y Jamón Finas Hierbas",
+          "price": 24900,
+          "image": "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
+          "images": [
+            "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
+            "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-1.jpg"
+          ],
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        },
+        {
+          "id": "b-mixta",
+          "name": "Mixta + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Peperoni, Salami y hojas de Albahaca",
+          "price": 24900,
+          "image": "/images/products/k-box/mixta/k-box-mixta-0.jpg",
+          "images": [
+            "/images/products/k-box/mixta/k-box-mixta-0.jpg",
+            "/images/products/k-box/mixta/k-box-mixta-1.jpg",
+            "/images/products/k-box/mixta/k-box-mixta-2.jpg"
+          ],
+          "promotion": {
+            "price": 24900,
+            "startDate": "2026-01-01",
+            "endDate": "2026-01-31"
+          }
+        },
+        {
+          "id": "b-hawaiana",
+          "name": "Hawaiana + bebida",
+          "description": "Masa Madurada con Salsa Napolitana, Piña caramelizada, Queso Mozzarela y Jamón Finas Hierbas",
+          "price": 24900,
+          "image": "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
+          "images": [
+            "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
+            "/images/products/k-box/hawaiana/k-box-hawaiana-1.jpg",
+            "/images/products/k-box/hawaiana/k-box-hawaiana-2.jpg"
+          ],
           "promotion": {
             "price": 24900,
             "startDate": "2026-01-01",
@@ -34,40 +84,6 @@
             "/images/products/k-box/quillera/k-box-quillera-1.jpg",
             "/images/products/k-box/quillera/k-box-quillera-2.jpg"
           ]
-        },
-        {
-          "id": "b-mixta",
-          "name": "Mixta + bebida",
-          "description": "Masa Madurada con Salsa Napolitana, Peperoni, Salami y hojas de Albahaca",
-          "price": 27000,
-          "image": "/images/products/k-box/mixta/k-box-mixta-0.jpg",
-          "images": [
-            "/images/products/k-box/mixta/k-box-mixta-0.jpg",
-            "/images/products/k-box/mixta/k-box-mixta-1.jpg",
-            "/images/products/k-box/mixta/k-box-mixta-2.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
-        },
-        {
-          "id": "b-hawaiana",
-          "name": "Hawaiana + bebida",
-          "description": "Masa Madurada con Salsa Napolitana, Piña caramelizada, Queso Mozzarela y Jamón Finas Hierbas",
-          "price": 27000,
-          "image": "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
-          "images": [
-            "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
-            "/images/products/k-box/hawaiana/k-box-hawaiana-1.jpg",
-            "/images/products/k-box/hawaiana/k-box-hawaiana-2.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
         },
         {
           "id": "b-4quesos",
@@ -91,22 +107,6 @@
             "/images/products/k-box/amarantta/k-box-amarantta-1.jpg",
             "/images/products/k-box/amarantta/k-box-amarantta-2.jpg"
           ]
-        },
-        {
-          "id": "b-jamon-queso",
-          "name": "Jamón y Queso + bebida",
-          "description": "Masa Madurada con Salsa Napolitana, Queso Mozzarela y Jamón Finas Hierbas",
-          "price": 27000,
-          "image": "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
-          "images": [
-            "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
-            "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-1.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
         }
       ]
     },
@@ -382,7 +382,7 @@
           "id": "sprite-400ml",
           "name": "Sprite 400 ml",
           "description": "",
-          "price": 4000,
+          "price": 3900,
           "image": "/images/products/sprite.png"
         }
       ]
@@ -418,6 +418,13 @@
         {
           "id": "aguila",
           "name": "Aguila",
+          "description": "",
+          "price": 4900,
+          "image": "/images/products/aguila.png"
+        },
+        {
+          "id": "club-colombia",
+          "name": "Club Colombia",
           "description": "",
           "price": 4900,
           "image": "/images/products/aguila.png"

@@ -9,7 +9,7 @@
           "id": "b-balsamica",
           "name": "Balsámica",
           "description": "Masa Madurada con Salsa de Pesto, Queso Mozzarella, Rúgula, Tomate Cherry y Queso Parmesano",
-          "price": 27000,
+          "price": 26900,
           "image": "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
           "images": [
             "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
@@ -39,7 +39,7 @@
           "id": "b-mixta",
           "name": "Mixta",
           "description": "Masa Madurada con Salsa Napolitana, Peperoni, Salami y hojas de Albahaca",
-          "price": 27000,
+          "price": 24900,
           "image": "/images/products/k-box/mixta/k-box-mixta-0.jpg",
           "images": [
             "/images/products/k-box/mixta/k-box-mixta-0.jpg",
@@ -56,7 +56,7 @@
           "id": "b-hawaiana",
           "name": "Hawaiana",
           "description": "Masa Madurada con Salsa Napolitana, Piña caramelizada, Queso Mozzarela y Jamón Finas Hierbas",
-          "price": 27000,
+          "price": 24900,
           "image": "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
           "images": [
             "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
@@ -96,7 +96,7 @@
           "id": "b-jamon-queso",
           "name": "Jamón y Queso",
           "description": "Masa Madurada con Salsa Napolitana, Queso Mozzarela y Jamón Finas Hierbas",
-          "price": 27000,
+          "price": 24900,
           "image": "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
           "images": [
             "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",

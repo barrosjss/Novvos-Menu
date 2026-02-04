@@ -34,9 +34,13 @@ const ProductCard = ({ product, promo, onClick }) => {
   // Then check for day-based promos (Tuesday/Thursday)
   if (promo && !hasDatePromotion) {
     if (promo.type === 'fixed_price') {
-      finalPrice = promo.value;
+      // Use the lower price between the regular price and the promo price
+      finalPrice = Math.min(price, promo.value);
       hasDiscount = price > finalPrice;
-      promoLabel = '¡PROMO HOY!';
+      // Only show promo label if the price is actually discounted
+      if (hasDiscount) {
+        promoLabel = '¡PROMO HOY!';
+      }
     } else if (promo.type === '2x1') {
       promoLabel = '2x1 HOY';
     }

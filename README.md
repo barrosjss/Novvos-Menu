@@ -1,16 +1,40 @@
-# React + Vite
+# Novvos Menu
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Menú interactivo y dinámico para Novvos, construido con React y Vite.
 
-Currently, two official plugins are available:
+## 🚀 Vistas y Rutas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El menú cuenta con rutas especiales para pruebas y visualización específica.
 
-## React Compiler
+### 🧪 Vista de Pruebas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Permite previsualizar cambios en los productos (usando `src/data/menu-prueba.json`) y simular diferentes días de la semana para verificar que las promociones automáticas funcionen correctamente.
 
-## Expanding the ESLint configuration
+- **URL base:** `/prueba`
+- **Simulación de días:** Agrega el parámetro `?dia=` al final de la URL.
+  - **Ejemplo:** `https://tusitio.com/prueba?dia=martes`
+- **Días soportados (en español):**
+  - `lunes`
+  - `martes` (Activa promo de $25.000 en K-Box y Rolls)
+  - `miercoles` / `miércoles`
+  - `jueves` (Activa promo 2x1 en Cocteles)
+  - `viernes`
+  - `sabado` / `sábado`
+  - `domingo`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🍸 Vista de Barra
+
+Muestra únicamente las categorías relacionadas con bebidas y coctelería, ideal para el código QR de la zona de barra.
+
+- **URL:** `/barra`
+- **Categorías incluidas:** Cocteles, Barra Artesanal, Bebidas y Cervezas.
+
+---
+
+## 🛠️ Desarrollo
+
+Para ejecutar el proyecto localmente:
+
+1. Instalar dependencias: `npm install`
+2. Iniciar servidor de desarrollo: `npm run dev`
+3. Construir para producción: `npm run build`

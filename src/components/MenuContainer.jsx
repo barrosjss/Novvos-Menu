@@ -116,19 +116,13 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
       }
     }
 
-    // Friday: Free Sodas for Women
-    if (currentDay === 'friday') {
-      if (categoryId === 'bebidas' || categoryId === 'barra-artesanal') {
-        return { type: 'fixed_price', value: 0 };
-      }
-    }
+
 
     return null;
   };
 
   const dayBanner = currentDay === 'tuesday' ? "¡HOY MARTES: K-BOX Y K-ROLLS A $25.000!" : 
-                    currentDay === 'thursday' ? "¡HOY JUEVES: 2x1 EN COCTELES!" : 
-                    currentDay === 'friday' ? "¡HOY VIERNES: SODAS GRATIS PARA LAS MUJERES!" : "";
+                    currentDay === 'thursday' ? "¡HOY JUEVES: 2x1 EN COCTELES!" : "";
 
   const scrollToSection = (index) => {
     if (index < 0 || index >= categories.length) return;
@@ -266,7 +260,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
  
               <div className="scroll-products-grid">
                 {sortItemsByPriority(category.items).map((item) => {
-                  const itemPromo = currentDay === 'friday' ? (item.id === 'sodas' ? promo : null) : promo;
+                  const itemPromo = promo;
                   return (
                     <ProductCard
                       key={item.id}

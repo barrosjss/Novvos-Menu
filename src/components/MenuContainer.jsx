@@ -101,27 +101,26 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
     };
   }, [categories, simulatedDay]);
 
-  const getPromoForCategory = (categoryId) => {
-    // Tuesday: K-Box and K-Rolls at 25.000
+  const getPromoForItem = (category, item) => {
+    // Tuesday: Specific K-Box and K-Rolls flavors at 25.000
     if (currentDay === 'tuesday') {
-      if (categoryId === 'k-box' || categoryId === 'k-roll') {
+      const promoFlavors = ['Mixta', 'Jamón y Queso', 'Hawaiana'];
+      if ((category === 'k-box' || category === 'k-roll') && promoFlavors.includes(item.name)) {
         return { type: 'fixed_price', value: 25000 };
       }
     }
     
     // Thursday: 2x1 Cocktails
     if (currentDay === 'thursday') {
-      if (categoryId === 'cocktails') {
+      if (category === 'cocktails') {
         return { type: '2x1' };
       }
     }
 
-
-
     return null;
   };
 
-  const dayBanner = currentDay === 'tuesday' ? "¡HOY MARTES: K-BOX Y K-ROLLS A $25.000!" : 
+  const dayBanner = currentDay === 'tuesday' ? "¡HOY MARTES: MIXTA, J&Q Y HAWAIANA A $25.000!" : 
                     currentDay === 'thursday' ? "¡HOY JUEVES: 2x1 EN COCTELES!" : "";
 
   const scrollToSection = (index) => {
@@ -217,8 +216,6 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
           </div>
         )}
         {categories.map((category) => {
-          const promo = getPromoForCategory(category.id);
-
           // List display mode for bebidas and cervezas
           if (category.displayMode === 'list') {
             return (
@@ -260,7 +257,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
  
               <div className="scroll-products-grid">
                 {sortItemsByPriority(category.items).map((item) => {
-                  const itemPromo = promo;
+                  const itemPromo = getPromoForItem(category.id, item);
                   return (
                     <ProductCard
                       key={item.id}

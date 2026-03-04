@@ -16,12 +16,7 @@
             "/images/products/k-box/balsamica/k-box-balsamica-1.jpg",
             "/images/products/k-box/balsamica/k-box-balsamica-2.jpg"
           ],
-          "badge": "Nuevo",
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          "badge": "Nuevo"
         },
         {
           "id": "b-quillera",
@@ -45,12 +40,7 @@
             "/images/products/k-box/mixta/k-box-mixta-0.jpg",
             "/images/products/k-box/mixta/k-box-mixta-1.jpg",
             "/images/products/k-box/mixta/k-box-mixta-2.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          ]
         },
         {
           "id": "b-hawaiana",
@@ -62,12 +52,7 @@
             "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
             "/images/products/k-box/hawaiana/k-box-hawaiana-1.jpg",
             "/images/products/k-box/hawaiana/k-box-hawaiana-2.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          ]
         },
         {
           "id": "b-4quesos",
@@ -101,12 +86,7 @@
           "images": [
             "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
             "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-1.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          ]
         }
       ]
     },

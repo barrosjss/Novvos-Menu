@@ -9,75 +9,55 @@
           "id": "b-balsamica",
           "name": "Balsámica",
           "description": "Masa Madurada con Salsa de Pesto, Queso Mozzarella, Rúgula, Tomate Cherry y Queso Parmesano",
-          "price": 26900,
+          "price": 25000,
           "image": "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
           "images": [
             "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
             "/images/products/k-box/balsamica/k-box-balsamica-1.jpg",
             "/images/products/k-box/balsamica/k-box-balsamica-2.jpg"
           ],
-          "badge": "Nuevo",
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          "badge": "Nuevo"
         },
         {
           "id": "b-jamon-queso",
           "name": "Jamón y Queso",
           "description": "Masa Madurada con Salsa Napolitana, Queso Mozzarela y Jamón Finas Hierbas",
-          "price": 26900,
+          "price": 22000,
           "image": "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
           "images": [
             "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-0.jpg",
             "/images/products/k-box/jamonyqueso/k-box-jamonyqueso-1.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          ]
         },
         {
           "id": "b-mixta",
           "name": "Mixta",
           "description": "Masa Madurada con Salsa Napolitana, Peperoni, Salami y hojas de Albahaca",
-          "price": 26900,
+          "price": 22000,
           "image": "/images/products/k-box/mixta/k-box-mixta-0.jpg",
           "images": [
             "/images/products/k-box/mixta/k-box-mixta-0.jpg",
             "/images/products/k-box/mixta/k-box-mixta-1.jpg",
             "/images/products/k-box/mixta/k-box-mixta-2.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          ]
         },
         {
           "id": "b-hawaiana",
           "name": "Hawaiana",
           "description": "Masa Madurada con Salsa Napolitana, Piña caramelizada, Queso Mozzarela y Jamón Finas Hierbas",
-          "price": 26900,
+          "price": 22000,
           "image": "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
           "images": [
             "/images/products/k-box/hawaiana/k-box-hawaiana-0.jpg",
             "/images/products/k-box/hawaiana/k-box-hawaiana-1.jpg",
             "/images/products/k-box/hawaiana/k-box-hawaiana-2.jpg"
-          ],
-          "promotion": {
-            "price": 24900,
-            "startDate": "2026-01-01",
-            "endDate": "2026-01-31"
-          }
+          ]
         },
         {
           "id": "b-quillera",
           "name": "Quillera",
           "description": "Masa Madurada con Salsa Napolitana, Butifarra, Pimentón Verde, Maíz Tierno, Chorizo de Res y Queso Parmesano",
-          "price": 26900,
+          "price": 27000,
           "image": "/images/products/k-box/quillera/k-box-quillera-0.jpg",
           "images": [
             "/images/products/k-box/quillera/k-box-quillera-0.jpg",
@@ -89,7 +69,7 @@
           "id": "b-4quesos",
           "name": "4 Quesos",
           "description": "Masa Madurada con Salsa Bechamel, Queso Mozzarella, Queso Holandés, Parmesano, y Queso Búfala",
-          "price": 26900,
+          "price": 25000,
           "image": "/images/products/k-box/4quesos/k-box-4quesos-0.jpg",
           "images": [
             "/images/products/k-box/4quesos/k-box-4quesos-0.jpg",
@@ -100,7 +80,7 @@
           "id": "b-amaranta",
           "name": "Amaranta",
           "description": "Masa Madurada con Salsa Bechamel, Queso Mozzarella, Cubos de Pechuga, Espinaca al óleo, Champiñones y Queso Parmesano",
-          "price": 26900,
+          "price": 27000,
           "image": "/images/products/k-box/amarantta/k-box-amarantta-0.jpg",
           "images": [
             "/images/products/k-box/amarantta/k-box-amarantta-0.jpg",
@@ -119,7 +99,7 @@
           "id": "ranchera",
           "name": "Ranchera",
           "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno de queso mozzarella, jamón, chorizo ranchero, maíz y cubierto de queso parmesano.",
-          "price": 26900,
+          "price": 27000,
           "image": "/images/products/k-roll/ranchero/k-roll-ranchero-0.jpg",
           "images": [
             "/images/products/k-roll/ranchero/k-roll-ranchero-0.jpg",
@@ -131,7 +111,7 @@
           "id": "alfreda",
           "name": "Alfreda",
           "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno con salsa blanca, pimienta, queso mozzarella y pollo, cubierto de queso parmesano.",
-          "price": 26900,
+          "price": 27000,
           "image": "/images/products/k-roll/alfreda/k-roll-alfreda-0.jpg",
           "images": [
             "/images/products/k-roll/alfreda/k-roll-alfreda-0.jpg",
@@ -143,7 +123,7 @@
           "id": "candy",
           "name": "Candy",
           "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, Queso Mozzarela, Bocadillo y cubierto de queso parmesano.",
-          "price": 26900,
+          "price": 25000,
           "image": "/images/products/k-roll/candy/k-roll-candy-0.jpg",
           "images": [
             "/images/products/k-roll/candy/k-roll-candy-0.jpg",
@@ -155,7 +135,7 @@
           "id": "k-roll-hawaiana",
           "name": "Hawaiana",
           "description": "Rollo horneado elaborado con masa madurada, bañado de crema de ajo, relleno con queso mozzarella y jamón de pavo a las finas hierbas, cubierto de queso parmesano.",
-          "price": 26900,
+          "price": 25000,
           "image": "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
           "images": [
             "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
@@ -175,7 +155,7 @@
           "id": "k-cuadrate-general",
           "name": "K-Cuadrate",
           "description": "Formato mediano (3-4 Personas)Arma tu combinación y disfruta.",
-          "price": 59900,
+          "price": 60000,
           "image": "/images/products/k-cuadrate/k-cuadrate.png",
           "images": [
             "/images/products/k-cuadrate/k-cuadrate.png",
@@ -186,6 +166,7 @@
     },
     {
       "id": "cocktails",
+      "hidden": true,
       "title": "Cocteles",
       "description": "Mixología artesanal con técnicas innovadoras y sabores únicos de la casa",
       "items": [
@@ -298,92 +279,78 @@
           "id": "scheweppes-ginger-1.5l",
           "name": "Schweppes Ginger 1.5 L",
           "description": "",
-          "price": 11900,
+          "price": 12000,
           "image": "/images/products/schweppes_ginger.png"
         },
         {
           "id": "te-fuze-durazno-400ml",
-          "name": "Té Durazno 400 ml",
+          "name": "Té Negro Fuze Durazno 400 ml",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/te_fuze.png"
         },
         {
           "id": "te-verde-mango-400ml",
-          "name": "Té Mango Manzanilla 400 ml",
+          "name": "Té Verde Mango Manzanilla 400 ml",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/te_verde.png"
         },
         {
           "id": "ginger-400ml",
           "name": "Ginger 400 ml",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/ginger_400.png"
         },
         {
           "id": "coca-cola-1.5l",
           "name": "Coca Cola Original 1.5 L",
           "description": "",
-          "price": 9900,
+          "price": 10000,
           "image": "/images/products/coca_cola_15.png"
         },
         {
           "id": "coca-cola-zero-250ml",
           "name": "Coca Cola Zero 250 ml",
           "description": "",
-          "price": 1900,
+          "price": 2000,
           "image": "/images/products/coca_cola_zero.png"
         },
         {
           "id": "agua-brisa-600ml",
-          "name": "Agua Brisa 600 ml",
+          "name": "Agua Brisa Sin Gas 600 ml",
           "description": "",
-          "price": 3900,
-          "image": "/images/products/agua_brisa.png"
-        },
-        {
-          "id": "agua-brisa-280ml",
-          "name": "Agua Brisa 280 ml",
-          "description": "",
-          "price": 2000,
+          "price": 4000,
           "image": "/images/products/agua_brisa.png"
         },
         {
           "id": "coca-cola-400ml",
           "name": "Coca Cola 400 ml",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/coca_cola_400.png"
         },
         {
           "id": "quatro-toronja-250ml",
-          "name": "Quatro Toronja 250 ml",
+          "name": "Cuatro Toronja 250 ml",
           "description": "",
-          "price": 3900,
+          "price": 4000,
           "image": "/images/products/quatro_toronja.png"
         },
         {
           "id": "quatro-choice-2.5l",
-          "name": "Quatro Choice 2.5L",
+          "name": "Cuatro Choice 2.5L",
           "description": "",
-          "price": 12900,
+          "price": 13000,
           "image": "/images/products/quatro_choice.png"
         },
         {
           "id": "agua-manzana-280ml",
-          "name": "Agua Manzana 280 ml",
+          "name": "Agua Saborizada Manzana 280 ml",
           "description": "",
           "price": 2500,
           "image": "/images/products/agua_manzana.png"
-        },
-        {
-          "id": "sprite-400ml",
-          "name": "Sprite 400 ml",
-          "description": "",
-          "price": 3900,
-          "image": "/images/products/sprite.png"
         }
       ]
     },
@@ -398,35 +365,35 @@
           "id": "stella-artois",
           "name": "Stella Artois",
           "description": "",
-          "price": 7900,
+          "price": 8000,
           "image": "/images/products/stella_artois.png"
         },
         {
           "id": "corona",
           "name": "Corona",
           "description": "",
-          "price": 7900,
+          "price": 8000,
           "image": "/images/products/corona.png"
         },
         {
           "id": "budweiser",
-          "name": "Budweiser",
+          "name": "Budweiser Lata",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/budweiser.png"
         },
         {
           "id": "aguila",
-          "name": "Aguila",
+          "name": "Aguila Negra Lata",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/aguila.png"
         },
         {
           "id": "club-colombia",
           "name": "Club Colombia",
           "description": "",
-          "price": 4900,
+          "price": 5000,
           "image": "/images/products/aguila.png"
         }
       ]

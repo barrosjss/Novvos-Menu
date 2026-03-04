@@ -5,56 +5,22 @@ import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import './components.css';
 
-// Helper function to check if a date-based promotion is active
-const isPromotionActive = (promotion) => {
-  if (!promotion) return false;
-
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-
-  const startDate = new Date(promotion.startDate);
-  const endDate = new Date(promotion.endDate);
-  endDate.setHours(23, 59, 59, 999);
-
-  return today >= startDate && today <= endDate;
-};
-
-// Sort items: products with active promotions or "Nuevo" badge first
+// Sort items: products with "Nuevo" badge first
 const sortItemsByPriority = (items) => {
   return [...items].sort((a, b) => {
-    const aHasPromo = isPromotionActive(a.promotion);
-    const bHasPromo = isPromotionActive(b.promotion);
-    const aIsNew = a.badge === 'Nuevo';
-    const bIsNew = b.badge === 'Nuevo';
-
-    // Priority: active promo > nuevo badge > rest
-    const aPriority = aHasPromo ? 2 : (aIsNew ? 1 : 0);
-    const bPriority = bHasPromo ? 2 : (bIsNew ? 1 : 0);
-
-    if (aPriority !== bPriority) return bPriority - aPriority;
-    return 0; // Keep original order for items with same priority
+    const aIsNew = a.badge === 'Nuevo' ? 1 : 0;
+    const bIsNew = b.badge === 'Nuevo' ? 1 : 0;
+    return bIsNew - aIsNew;
   });
 };
 
-const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulatedDay = null, isBarOnly = false }) => {
-  const [currentDay, setCurrentDay] = useState('');
+const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, isBarOnly = false }) => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [selectedProductPromo, setSelectedProductPromo] = useState(null);
 
-  const categories = menuData.categories;
+  const categories = menuData.categories.filter(c => !c.hidden);
 
   useEffect(() => {
-    // Use simulated day if provided, otherwise use actual day
-    if (simulatedDay) {
-      setCurrentDay(simulatedDay);
-    } else {
-      const date = new Date();
-      const day = date.getDay();
-      const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
-      setCurrentDay(days[day]);
-    }
-
     // Improved scroll handler to update active section
     const handleScroll = () => {
       const header = document.querySelector('.menu-header-sticky');
@@ -99,29 +65,7 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
       window.removeEventListener('scroll', scrollListener);
       clearTimeout(scrollTimeout);
     };
-  }, [categories, simulatedDay]);
-
-  const getPromoForItem = (category, item) => {
-    // Tuesday: Specific K-Box and K-Rolls flavors at 25.000
-    if (currentDay === 'tuesday') {
-      const promoFlavors = ['Mixta', 'Jamón y Queso', 'Hawaiana'];
-      if ((category === 'k-box' || category === 'k-roll') && promoFlavors.includes(item.name)) {
-        return { type: 'fixed_price', value: 25000 };
-      }
-    }
-    
-    // Thursday: 2x1 Cocktails
-    if (currentDay === 'thursday') {
-      if (category === 'cocktails') {
-        return { type: '2x1' };
-      }
-    }
-
-    return null;
-  };
-
-  const dayBanner = currentDay === 'tuesday' ? "¡HOY MARTES: MIXTA, J&Q Y HAWAIANA A $25.000!" : 
-                    currentDay === 'thursday' ? "¡HOY JUEVES: 2x1 EN COCTELES!" : "";
+  }, [categories]);
 
   const scrollToSection = (index) => {
     if (index < 0 || index >= categories.length) return;
@@ -156,29 +100,20 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
     if (newIndex < categories.length) scrollToSection(newIndex);
   };
 
-  const handleProductClick = (product, promo) => {
+  const handleProductClick = (product) => {
     setSelectedProduct(product);
-    setSelectedProductPromo(promo);
   };
 
   const handleCloseModal = () => {
     setSelectedProduct(null);
-    setSelectedProductPromo(null);
   };
 
   return (
-    <div className={`main-scroll-container with-promo-banner`}>
+    <div className="main-scroll-container">
       {/* Test Mode Badge */}
       {isTestMode && (
         <div className="test-mode-badge" onClick={() => window.location.href = '/'}>
           VISTA DE PRUEBAS
-          {simulatedDay && (
-            <span className="simulated-day-label">
-              {' '}({simulatedDay === 'tuesday' ? 'Martes' :
-                    simulatedDay === 'thursday' ? 'Jueves' :
-                    simulatedDay.charAt(0).toUpperCase() + simulatedDay.slice(1)})
-            </span>
-          )}
         </div>
       )}
 
@@ -187,12 +122,6 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
         <div className="brand-bar-centered">
            <img src="/logo.webp" alt="Novvos Logo" className="header-logo" />
         </div>
-
-        {dayBanner && (
-          <div className="sticky-promo-banner">
-            {dayBanner}
-          </div>
-        )}
       </header>
 
       {/* Content Section */}
@@ -256,17 +185,13 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
                {category.description && <p className="scroll-category-desc">{category.description}</p>}
  
               <div className="scroll-products-grid">
-                {sortItemsByPriority(category.items).map((item) => {
-                  const itemPromo = getPromoForItem(category.id, item);
-                  return (
+                {sortItemsByPriority(category.items).map((item) => (
                     <ProductCard
                       key={item.id}
                       product={item}
-                      promo={itemPromo}
-                      onClick={() => handleProductClick(item, itemPromo)}
+                      onClick={() => handleProductClick(item)}
                     />
-                  );
-                })}
+                  ))}
               </div>
             </section>
           );
@@ -309,7 +234,6 @@ const MenuContainer = ({ menuData = defaultMenuData, isTestMode = false, simulat
       {selectedProduct && (
         <ProductModal
           product={selectedProduct}
-          promo={selectedProductPromo}
           onClose={handleCloseModal}
         />
       )}

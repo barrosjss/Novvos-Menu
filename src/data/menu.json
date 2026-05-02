@@ -1,6 +1,49 @@
 {
   "categories": [
     {
+      "id": "asados",
+      "title": "Asados",
+      "description": "Parrilla artesanal con los mejores cortes y sazón de la casa. Acompañados de papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero, ensalada de la casa, chimichurri y crema de ajo.",
+      "items": [
+        {
+          "id": "asado-pechuga",
+          "name": "Asado de Pechuga",
+          "description": "200 gramos de pechuga asada, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
+          "price": 35000,
+          "badge": "Nuevo",
+          "image": "/images/products/asados/Asado-Pollo.webp",
+          "images": ["/images/products/asados/Asado-Pollo.webp"]
+        },
+        {
+          "id": "asado-carne",
+          "name": "Asado de Carne",
+          "description": "200 gramos de Punta gorda, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
+          "price": 40000,
+          "badge": "Nuevo",
+          "image": "/images/products/asados/Asado-Carne.webp",
+          "images": ["/images/products/asados/Asado-Carne.webp"]
+        },
+        {
+          "id": "asado-cerdo",
+          "name": "Asado de Cerdo",
+          "description": "200 gramos de pulpa de cerdo, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
+          "price": 38000,
+          "badge": "Nuevo",
+          "image": "/images/products/asados/Asado-Cerdo.webp",
+          "images": ["/images/products/asados/Asado-Cerdo.webp"]
+        },
+        {
+          "id": "asado-mixto",
+          "name": "Asado Mixto",
+          "description": "300 gramos de proteína, acompañado con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
+          "price": 48000,
+          "isComingSoon": true,
+          "image": "/images/products/asados/Asado-Mixto.webp",
+          "images": ["/images/products/asados/Asado-Mixto.webp"]
+        }
+      ]
+    },
+    {
       "id": "k-box",
       "title": "K-Box",
       "description": "Revolucionamos la forma de hacer pizzas. Somos la primera K-Box en Barranquilla: pizza rectangular elaborada con masa madurada e ingredientes de calidad",
@@ -15,8 +58,7 @@
             "/images/products/k-box/balsamica/k-box-balsamica-0.jpg",
             "/images/products/k-box/balsamica/k-box-balsamica-1.jpg",
             "/images/products/k-box/balsamica/k-box-balsamica-2.jpg"
-          ],
-          "badge": "Nuevo"
+          ]
         },
         {
           "id": "b-jamon-queso",
@@ -141,8 +183,7 @@
             "/images/products/k-roll/hawaiano/k-roll-hawaiano-0.jpg",
             "/images/products/k-roll/hawaiano/k-roll-hawaiano-1.jpg",
             "/images/products/k-roll/hawaiano/k-roll-hawaiano-2.jpg"
-          ],
-          "badge": "Nuevo"
+          ]
         }
       ]
     },
@@ -161,49 +202,6 @@
             "/images/products/k-cuadrate/k-cuadrate.png",
             "/images/products/k-cuadrate/k-cuadrate-0.jpg"
           ]
-        }
-      ]
-    },
-    {
-      "id": "asados",
-      "title": "Asados",
-      "description": "Parrilla artesanal con los mejores cortes y sazón de la casa. Acompañados de papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero, ensalada de la casa, chimichurri y crema de ajo.",
-      "items": [
-        {
-          "id": "asado-pechuga",
-          "name": "Asado de Pechuga",
-          "description": "200 gramos de pechuga asada, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 35000,
-          "badge": "Nuevo",
-          "image": "/images/products/asados/Asado-Pollo.webp",
-          "images": ["/images/products/asados/Asado-Pollo.webp"]
-        },
-        {
-          "id": "asado-carne",
-          "name": "Asado de Carne",
-          "description": "200 gramos de Punta gorda, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 40000,
-          "badge": "Nuevo",
-          "image": "/images/products/asados/Asado-Carne.webp",
-          "images": ["/images/products/asados/Asado-Carne.webp"]
-        },
-        {
-          "id": "asado-cerdo",
-          "name": "Asado de Cerdo",
-          "description": "200 gramos de pulpa de cerdo, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 38000,
-          "badge": "Nuevo",
-          "image": "/images/products/asados/Asado-Cerdo.webp",
-          "images": ["/images/products/asados/Asado-Cerdo.webp"]
-        },
-        {
-          "id": "asado-mixto",
-          "name": "Asado Mixto",
-          "description": "300 gramos de proteína, acompañado con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 48000,
-          "isComingSoon": true,
-          "image": "/images/products/asados/Asado-Mixto.webp",
-          "images": ["/images/products/asados/Asado-Mixto.webp"]
         }
       ]
     },

@@ -18,7 +18,7 @@
           "id": "asado-carne",
           "name": "Asado de Carne",
           "description": "200 gramos de Punta gorda, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 40000,
+          "price": 35000,
           "badge": "Nuevo",
           "image": "/images/products/asados/Asado-Carne.webp",
           "images": ["/images/products/asados/Asado-Carne.webp"]
@@ -27,7 +27,7 @@
           "id": "asado-cerdo",
           "name": "Asado de Cerdo",
           "description": "200 gramos de pulpa de cerdo, acompañada con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 38000,
+          "price": 35000,
           "badge": "Nuevo",
           "image": "/images/products/asados/Asado-Cerdo.webp",
           "images": ["/images/products/asados/Asado-Cerdo.webp"]
@@ -36,7 +36,7 @@
           "id": "asado-mixto",
           "name": "Asado Mixto",
           "description": "300 gramos de proteína, acompañado con papa criolla a la mantequilla con finas hierbas y queso parmesano, maíz, chorizo ranchero y ensalada de la casa, incluye chimichurri y crema de ajo.",
-          "price": 48000,
+          "price": 35000,
           "isComingSoon": true,
           "image": "/images/products/asados/Asado-Mixto.webp",
           "images": ["/images/products/asados/Asado-Mixto.webp"]

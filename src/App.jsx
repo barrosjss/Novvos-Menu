@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import MenuContainer from './components/MenuContainer';
+import LinkTree from './components/LinkTree';
+import Eventos from './components/Eventos';
+import Sugerencias from './components/Sugerencias';
 import menuData from './data/menu.json';
 import menuPruebaData from './data/menu-prueba.json';
 import './App.css';
 
-// Map Spanish day names to English
 const dayMap = {
   'domingo': 'sunday',
   'lunes': 'monday',
@@ -14,65 +16,70 @@ const dayMap = {
   'jueves': 'thursday',
   'viernes': 'friday',
   'sabado': 'saturday',
-  'sábado': 'saturday'
+  'sábado': 'saturday',
 };
 
+function pickCategories(data, ids) {
+  const catMap = Object.fromEntries(data.categories.map((c) => [c.id, c]));
+  return {
+    ...data,
+    categories: ids
+      .map((id) => catMap[id])
+      .filter(Boolean)
+      .map((c) => ({ ...c, hidden: false })),
+  };
+}
+
+const ALMUERZOS = ['asados', 'barra-artesanal', 'bebidas', 'cervezas'];
+const NOCTURNO = ['k-box', 'k-roll', 'k-cuadrate', 'cocktails', 'asados', 'barra-artesanal', 'bebidas', 'cervezas'];
+const BEBIDAS = ['barra-artesanal', 'bebidas', 'cervezas'];
+
 function App() {
-  const [isTestMode, setIsTestMode] = useState(false);
-  const [currentMenuData, setCurrentMenuData] = useState(menuData);
-  const [simulatedDay, setSimulatedDay] = useState(null);
-  const [isBarOnly, setIsBarOnly] = useState(false);
+  const [view, setView] = useState('menu');
+  const [menuProps, setMenuProps] = useState({
+    menuData,
+    isTestMode: false,
+    simulatedDay: null,
+    isBarOnly: false,
+  });
 
   useEffect(() => {
-    // Check if we're on the /prueba route
-    const checkRoute = () => {
-      const path = window.location.pathname;
+    const resolve = () => {
+      const path = window.location.pathname.replace(/\/$/, '');
       const params = new URLSearchParams(window.location.search);
       const dayParam = params.get('dia');
 
-      if (path === '/prueba' || path === '/prueba/') {
-        setIsTestMode(true);
-        setCurrentMenuData(menuPruebaData);
+      if (path === '/linktree') { setView('linktree'); return; }
+      if (path === '/eventos')  { setView('eventos');  return; }
+      if (path === '/sugerencias') { setView('sugerencias'); return; }
 
-        // Check for simulated day parameter
-        if (dayParam && dayMap[dayParam.toLowerCase()]) {
-          setSimulatedDay(dayMap[dayParam.toLowerCase()]);
-        } else {
-          setSimulatedDay(null);
-        }
-      } else if (path === '/barra' || path === '/barra/') {
-        setIsTestMode(false);
-        setSimulatedDay(null);
-        setIsBarOnly(true);
-        // Filter for bar items: cocktails, barra-artesanal, bebidas, cervezas
-        const barCategories = ['cocktails', 'barra-artesanal', 'bebidas', 'cervezas'];
-        setCurrentMenuData({
-          ...menuData,
-          categories: menuData.categories.filter(cat => barCategories.includes(cat.id))
-        });
+      setView('menu');
+
+      if (path === '/almuerzos') {
+        setMenuProps({ menuData: pickCategories(menuData, ALMUERZOS), isTestMode: false, simulatedDay: null, isBarOnly: false });
+      } else if (path === '/nocturno') {
+        setMenuProps({ menuData: pickCategories(menuData, NOCTURNO), isTestMode: false, simulatedDay: null, isBarOnly: false });
+      } else if (path === '/bebidas' || path === '/barra') {
+        setMenuProps({ menuData: pickCategories(menuData, BEBIDAS), isTestMode: false, simulatedDay: null, isBarOnly: true });
+      } else if (path === '/prueba') {
+        const day = dayParam && dayMap[dayParam.toLowerCase()] ? dayMap[dayParam.toLowerCase()] : null;
+        setMenuProps({ menuData: menuPruebaData, isTestMode: true, simulatedDay: day, isBarOnly: false });
       } else {
-        setIsTestMode(false);
-        setIsBarOnly(false);
-        setCurrentMenuData(menuData);
-        setSimulatedDay(null);
+        setMenuProps({ menuData, isTestMode: false, simulatedDay: null, isBarOnly: false });
       }
     };
 
-    checkRoute();
-
-    // Listen for route changes
-    window.addEventListener('popstate', checkRoute);
-    return () => window.removeEventListener('popstate', checkRoute);
+    resolve();
+    window.addEventListener('popstate', resolve);
+    return () => window.removeEventListener('popstate', resolve);
   }, []);
 
   return (
     <div className="App">
-      <MenuContainer
-        menuData={currentMenuData}
-        isTestMode={isTestMode}
-        simulatedDay={simulatedDay}
-        isBarOnly={isBarOnly}
-      />
+      {view === 'linktree'    && <LinkTree />}
+      {view === 'eventos'     && <Eventos />}
+      {view === 'sugerencias' && <Sugerencias />}
+      {view === 'menu'        && <MenuContainer {...menuProps} />}
     </div>
   );
 }

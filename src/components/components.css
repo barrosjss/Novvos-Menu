@@ -118,6 +118,7 @@ body {
   height: 220px; /* Increased height for better image display */
   position: relative;
   background-color: #2a2a2a; /* Placeholder bg */
+  overflow: hidden; /* Ensure blur doesn't bleed out */
 }
 
 .product-image {
@@ -203,6 +204,38 @@ body {
 
 .promo-badge.new-badge {
   background: #4caf50; /* Green for new items */
+}
+
+.product-card.coming-soon {
+  pointer-events: none;
+  cursor: default;
+  position: relative;
+}
+
+.product-card.coming-soon .product-image {
+  filter: blur(12px) grayscale(0.8); /* Strong blur and grayscale only on image */
+  transform: scale(1.1);
+  opacity: 0.7; /* Optional: reduce image opacity slightly */
+}
+
+/* Add a dark overlay to further obscure the image */
+.product-card.coming-soon .product-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 5;
+}
+
+.coming-soon-badge {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: #fff !important;
+  border: 1px solid var(--primary-color);
+  backdrop-filter: blur(4px);
+  z-index: 10;
 }
 
 .menu-footer {
@@ -813,4 +846,448 @@ body {
   100% {
     transform: scale(1);
   }
+}
+
+/* ============================================
+   LINKTREE
+   ============================================ */
+.linktree-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 48px 20px 60px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.linktree-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.linktree-logo {
+  width: 160px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.linktree-tagline {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.linktree-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.linktree-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--lt-accent, var(--primary-color));
+  border-radius: 14px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.linktree-btn:active {
+  transform: scale(0.98);
+}
+
+@media (hover: hover) {
+  .linktree-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    background: #1a1a1a;
+  }
+}
+
+.linktree-btn-icon {
+  font-size: 1.4rem;
+  color: var(--lt-accent, var(--primary-color));
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+.linktree-btn-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-align: left;
+}
+
+.linktree-btn-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.linktree-btn-sub {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.linktree-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.linktree-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.linktree-ig:hover {
+  color: var(--primary-color);
+}
+
+/* ============================================
+   SHARED PAGE LAYOUT (Eventos / Sugerencias)
+   ============================================ */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 14px 20px;
+  border-bottom: 1px solid #222;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.page-back-btn {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.page-header-logo {
+  height: 44px;
+  object-fit: contain;
+}
+
+.page-content {
+  flex: 1;
+  padding: 24px 16px 80px;
+}
+
+.page-title {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  border-left: 4px solid var(--primary-color);
+  padding-left: 12px;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 28px;
+  padding-left: 16px;
+  font-style: italic;
+  text-align: left;
+}
+
+.page-section-title {
+  font-size: 0.85rem;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 32px 0 16px;
+}
+
+/* ============================================
+   EVENTOS
+   ============================================ */
+.eventos-empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-secondary);
+  line-height: 2;
+}
+
+.eventos-empty-icon {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eventos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.evento-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.evento-card.past {
+  opacity: 0.45;
+}
+
+.evento-img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.evento-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.evento-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--primary-color);
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.evento-info {
+  padding: 16px;
+}
+
+.evento-title {
+  font-size: 1.15rem;
+  color: white;
+  margin: 0 0 10px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.evento-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.evento-meta span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.evento-meta svg {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.evento-desc {
+  color: #bbb;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* ============================================
+   SUGERENCIAS
+   ============================================ */
+.sug-icon-wrap {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.sug-icon {
+  font-size: 2.5rem;
+  color: #f687b3;
+}
+
+.sug-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.sug-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.sug-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sug-optional {
+  font-weight: 400;
+  text-transform: none;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.sug-input,
+.sug-textarea {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  color: white;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  resize: none;
+}
+
+.sug-input:focus,
+.sug-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.sug-char-count {
+  font-size: 0.75rem;
+  color: #555;
+  text-align: right;
+}
+
+.sug-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #25d366;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.sug-submit-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.sug-submit-btn:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.sug-thanks {
+  text-align: center;
+  padding: 48px 20px;
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sug-reset-btn {
+  background: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+/* ============================================
+   WIP / COMING SOON
+   ============================================ */
+.wip-card {
+  margin-top: 40px;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.wip-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.wip-title {
+  font-size: 1.4rem;
+  color: white;
+  margin: 0;
+  font-weight: 700;
+}
+
+.wip-msg {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}
+
+.wip-ig {
+  color: #555;
+  font-size: 0.85rem;
+  margin: 0;
 }

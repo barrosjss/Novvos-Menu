@@ -16,7 +16,7 @@ const isPromotionActive = (promotion) => {
 };
 
 const ProductCard = ({ product, promo, onClick }) => {
-  const { name, description, price, image, badge, promotion } = product;
+  const { name, description, price, image, badge, promotion, isComingSoon } = product;
 
   // Determine final price and correct display based on promo
   let finalPrice = price;
@@ -54,8 +54,12 @@ const ProductCard = ({ product, promo, onClick }) => {
     displayBadge = '¡RECLAMA TU SODA GRATIS!';
   }
 
+  if (isComingSoon) {
+    displayBadge = 'PRÓXIMAMENTE';
+  }
+
   return (
-    <div className="product-card" onClick={onClick}>
+    <div className={`product-card ${isComingSoon ? 'coming-soon' : ''}`} onClick={isComingSoon ? null : onClick}>
       <div className="product-image-container">
         {/* Placeholder if image load fails or is missing, but ideally we have images */}
         <img
@@ -66,34 +70,36 @@ const ProductCard = ({ product, promo, onClick }) => {
           decoding="async"
           onError={(e) => {e.target.onerror = null; e.target.src="https://placehold.co/400x300/1a1a1a/FFF?text=Novvos"}}
         />
-        {displayBadge && <div style={{position: 'absolute', top: 10, right: 10}} className={`promo-badge ${badge && !promoLabel ? 'new-badge' : ''}`}>{displayBadge}</div>}
+        {displayBadge && <div style={{position: 'absolute', top: 10, right: 10}} className={`promo-badge ${badge && !promoLabel ? 'new-badge' : ''} ${isComingSoon ? 'coming-soon-badge' : ''}`}>{displayBadge}</div>}
       </div>
       
       <div className="product-details">
         <h3 className="product-title" translate="no">{name}</h3>
         <p className="product-description">{description}</p>
         
-        <div className="product-footer">
-          <div className="price-container">
-            {hasDiscount ? (
-              <div className="date-promo-prices">
-                <span className="product-price promo-price">
+        {!isComingSoon && (
+          <div className="product-footer">
+            <div className="price-container">
+              {hasDiscount ? (
+                <div className="date-promo-prices">
+                  <span className="product-price promo-price">
+                    {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
+                  </span>
+                  <span className="price-original">${price.toLocaleString('es-CO')}</span>
+                </div>
+              ) : (
+                <span className="product-price">
                   {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
                 </span>
-                <span className="price-original">${price.toLocaleString('es-CO')}</span>
+              )}
+            </div>
+            {finalPrice === 0 && (
+              <div className="free-item-tc">
+                *Válido 1 por mujer con consumo mínimo
               </div>
-            ) : (
-              <span className="product-price">
-                {finalPrice === 0 ? 'GRATIS' : `$${finalPrice.toLocaleString('es-CO')}`}
-              </span>
             )}
           </div>
-          {finalPrice === 0 && (
-            <div className="free-item-tc">
-              *Válido 1 por mujer con consumo mínimo
-            </div>
-          )}
-        </div>
+        )}
       </div>
     </div>
   );

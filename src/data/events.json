@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "id": "inauguracion-asados",
+      "title": "Inauguración Menú de Asados",
+      "date": "2026-05-02",
+      "endDate": "2026-05-31",
+      "time": "12:00",
+      "location": "Novvos - Barranquilla",
+      "description": "¡Estrenan nuestro nuevo menú de asados! Cortes a la parrilla con el sazón y la dedicación que nos caracterizan. Ven a ser de los primeros en vivirlo.",
+      "badge": "Nuevo",
+      "image": null
+    }
+  ]
+}
